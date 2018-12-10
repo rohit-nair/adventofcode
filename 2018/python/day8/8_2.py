@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 
 def getinput(file="testinput.txt"):
   with open(file, 'r') as f:

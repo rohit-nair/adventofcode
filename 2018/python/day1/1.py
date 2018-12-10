@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 with open('1_input.txt', 'r') as f:
     read_data = [int(l.rstrip('\n')) for l in f.readlines()]
 
