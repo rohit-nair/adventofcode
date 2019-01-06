@@ -198,7 +198,8 @@ def trickledown(x, y):
         if isstuck and len(path) == 0 and len(visited) > 0:
           appendcelltopath(path, *visited.pop())
 
-# Recursive implementation
+# Attempt towards Recursive implementation
+# Recursive depth exceeds given input
 def trickledownrecursive(x, y, comingfromleft=False, comingfromright=False):
   print(x, y)
   curcell = (x, y)

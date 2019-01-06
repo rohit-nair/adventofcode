@@ -2,6 +2,26 @@
 
 import ast
 from collections import defaultdict
+from pprint import pprint
+
+__all__ = [
+  'addi',
+  'addr',
+  'bani',
+  'banr',
+  'bori',
+  'borr',
+  'eqir',
+  'eqri',
+  'eqrr',
+  'gtir',
+  'gtri',
+  'gtrr',
+  'muli',
+  'mulr',
+  'seti',
+  'setr',
+  'executeop']
 
 inputs = []
 testinputs = []
@@ -220,37 +240,7 @@ def getinput(file="input16.txt"):
       else:
         cur.append(map(int, l.split()))
 
-
-getinput()
-
-res1 = 0
-for i, v in enumerate(inputs):
-  res1 += operate(i, v) > 2
-print('{} samples behave like three or more opcodes.'.format(res1))
-
-
-
-
-
-###################################
-# PART 2
-###################################
-
-# dict to handle operation sets
-codeopmapping = {}
-all_ops = set()
-
-for k, v in trackopcodes.items():
-  # print(k, v)
-  max_val = max(v.values())
-  poss_ops = set([key for key, value in v.items() if value == max_val])
-
-  all_ops |= poss_ops
-  codeopmapping[k] = poss_ops
-
-# print(codeopmapping)
-
-map_opname_to_func = {
+_map_opname_to_func = {
   'addi': addi, 
   'addr': addr, 
   'bani': bani, 
@@ -269,33 +259,69 @@ map_opname_to_func = {
   'setr': setr
 }
 
+def executeop(op, registers, operandA, operandB, operandC):
+  _map_opname_to_func[op](registers, operandA, operandB, operandC)
 
-ops = {}
-while len(all_ops) > 0:
-  found_ops = set()
-  for k, v in codeopmapping.items():
-    if len(v) == 1:
-      (found_op,) = v
-      ops[k] = found_op
-      found_ops.add(found_op)
+if __name__ == '__main__':
+  ###################################
+  # PART 1
+  ###################################
+  getinput()
 
-  all_ops -= found_ops
-
-  for k in codeopmapping.keys():
-    codeopmapping[k] -= found_ops
-    if len(codeopmapping[k]) == 0:
-      del codeopmapping[k]
-
-print(sorted([(k, v) for k, v in ops.items()]))
-
-# Compute final stae of register
-registers = [0, 0, 0, 0]
-for v in testinputs:
-  opcode, operandA, operandB, operandC = v
-  map_opname_to_func[ops[opcode]](registers, operandA, operandB, operandC)
+  res1 = 0
+  for i, v in enumerate(inputs):
+    res1 += operate(i, v) > 2
+  print('{} samples behave like three or more opcodes.'.format(res1))
 
 
-print('Final state of registers is {}'.format(registers))
+
+
+
+  ###################################
+  # PART 2
+  ###################################
+
+  # dict to handle operation sets
+  codeopmapping = {}
+  all_ops = set()
+
+  for k, v in trackopcodes.items():
+    # print(k, v)
+    max_val = max(v.values())
+    poss_ops = set([key for key, value in v.items() if value == max_val])
+
+    all_ops |= poss_ops
+    codeopmapping[k] = poss_ops
+
+  # print(codeopmapping)
+
+
+  ops = {}
+  while len(all_ops) > 0:
+    found_ops = set()
+    for k, v in codeopmapping.items():
+      if len(v) == 1:
+        (found_op,) = v
+        ops[k] = found_op
+        found_ops.add(found_op)
+
+    all_ops -= found_ops
+
+    for k in codeopmapping.keys():
+      codeopmapping[k] -= found_ops
+      if len(codeopmapping[k]) == 0:
+        del codeopmapping[k]
+
+  pprint(sorted([(k, v) for k, v in ops.items()]))
+
+  # Compute final stae of register
+  registers = [0, 0, 0, 0]
+  for v in testinputs:
+    opcode, operandA, operandB, operandC = v
+    _map_opname_to_func[ops[opcode]](registers, operandA, operandB, operandC)
+
+
+  print('Final state of registers is {}'.format(registers))
 
 
 
