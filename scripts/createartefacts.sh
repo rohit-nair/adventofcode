@@ -33,7 +33,7 @@ echo "Path="$PWD "Day="$DAY
 
 mkdir ../2018/python/day${DAY} && 
     cd ../2018/python/day${DAY} && 
-    touch ${DAY}.py && 
+    touch d${DAY}.py && 
     touch input${DAY}.txt && 
     touch testinput${DAY}.txt && 
-    chmod +x ${DAY}.py
+    chmod +x d${DAY}.py
