@@ -21,11 +21,16 @@ Solutions to Advent Of Code problems
   * [Day 13](./2018/python/day13/13.py)
   * [Day 14](./2018/python/day14/14.py)
   * [Day 15](./2018/python/day15/15.py)
-  * [Day 16](./2018/python/day16/16.py)
+  * [Day 16](./2018/python/day16/d16.py)
   * [Day 17](./2018/python/day17/17.py)
   * [Day 18](./2018/python/day18/18.py)
-  * [Day 19](./2018/python/day19/19.py)
-  * [Day 20](./2018/python/day20/20.py)
+  * [Day 19](./2018/python/day19/d19.py)
+  * [Day 20](./2018/python/day20/d20.py)
+
+* [2017 (Python)](./2017)
+  * [Problem Set](https://adventofcode.com/2017)
+  * [Day 1](./2017/python/day01/d01.py)
+  * [Day 2](./2017/python/day02/d02.py)
 
 # Helpful scripts
 
