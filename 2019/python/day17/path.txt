@@ -1,0 +1,25 @@
+L12,L10,R8,L12,R8,R10,R12|L12,L10,R8,L12,R8,R10,R12|,L10,R12,R8|,L10,R12,R8,R8,R10,R12|,L12,L10,R8,L12,R8,R10,R12|,L10,R12,R8
+
+Main Input: A,A,C,B,A,C
+A: L12,L10,R8,L12,R8,R10,R12
+B: L10,R12,R8,R8,R10,R12
+C: L10,R12,R8
+
+ASCII
+Main Input: 65, 44, 65, 44, 67, 44, 66, 44, 65, 44, 67, 10
+A: 
+
+
+A: 65
+B: 66
+C: 67
+
+
+
+L12,L10,R8,L12|R8,R10,R12|L12,L10,R8,L12|R8,R10,R12|L10,R12,R8|L10,R12,R8|R8,R10,R12|L12,L10,R8,L12|R8,R10,R12|L10,R12,R8
+A             |B         |A             |B         |C         |C         |B         |A             |B         |C
+
+Main Input: A,B,A,B,C,C,B,A,B,C
+A: L12,L10,R8,L12
+B: R8,R10,R12
+C: L10,R12,R8
