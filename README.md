@@ -12,6 +12,10 @@ Solutions to Advent Of Code problems
   * [Day 4](./2021/python/day04/d04.py)
   * [Day 5](./2021/python/day05/d05.py)
   * [Day 6](./2021/python/day06/d06.py)
+  * [Day 7](./2021/python/day07/d07.py)
+  * [Day 8](./2021/python/day08/d08.py)
+  * [Day 9](./2021/python/day09/d09.py)
+  * [Day 10](./2021/python/day10/d10.py)
 
 * [2019 (Python)](./2019)
   * [Problem Set](https://adventofcode.com/2019)
