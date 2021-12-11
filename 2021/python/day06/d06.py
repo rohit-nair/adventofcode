@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+from collections import Counter, defaultdict
 import math
 from os import path
 from dataclasses import dataclass
@@ -33,9 +34,6 @@ def process():
 
   print(f'There are {size_school} lanternfish after {days} days.')
 
-  for k in school.keys():
-    print(f'There are {len(school[k])} lanternfish of gen {k}.')
-
 def process_day(school):
   born = []
   for gen in school.values():
@@ -60,8 +58,31 @@ def get_updated_timer(fish_gen: Fish):
 def get_input():
   with open(path.dirname(__file__) + '/input06.txt', 'r+') as f:
     line = f.readline().strip().split(',')
-    # print(line)
+    # TODO: Generation logic is incorrect. Generations are the timer value.
     return {0: list(map(lambda x: Fish(int(x), 0), line))}
 
 
 process()
+
+
+def p2():
+  school = Counter(list(map(int, open(path.dirname(__file__) + '/input06.txt').readline().strip().split(','))))
+  
+  DAYS = 256
+  for d in range(DAYS):
+    new_school = defaultdict(int)
+    for gen, cnt in school.items():
+      if gen == 0:
+        new_school[DEFAULT_TIMER] += cnt
+        new_school[NEW_FISH_TIMER] += cnt
+      else:
+        new_school[gen-1] += cnt
+    school = new_school
+    # print(f'Total lanternfish after {d} is {sum(school.values())}.')
+
+  print(f'Total lanternfish after {DAYS} is {sum(school.values())}.')
+
+
+process()
+
+p2()
