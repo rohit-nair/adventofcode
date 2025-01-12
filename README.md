@@ -4,6 +4,22 @@ Solutions to Advent Of Code problems
 
 # Links
 
+* [2024 (Golang)](./2024)
+  * [Problem Set](https://adventofcode.com/2024)
+  * [Day 1](./2024/day_01/day_1.go)
+  * [Day 2](./2024/day_02/day_2.go)
+  * [Day 3](./2024/day_03/day_3.go)
+  * [Day 4](./2024/day_04/day_4.go)
+  * [Day 5](./2024/day_05/day_5.go)
+  * [Day 6](./2024/day_06/day_6.go)
+  * [Day 7](./2024/day_07/day_7.go)
+  * [Day 8](./2024/day_08/day_8.go)
+  * [Day 9](./2024/day_09/day_9.go)
+  * [Day 10](./2024/day_10/day_10.go)
+  * [Day 11](./2024/day_11/day_11.go)
+  * [Day 12](./2024/day_12/day_12.go)
+  * [Day 13](./2024/day_13/day_13.go)
+
 * [2021 (Python)](./2021)
   * [Problem Set](https://adventofcode.com/2021)
   * [Day 1](./2021/python/day01/d01.py)
