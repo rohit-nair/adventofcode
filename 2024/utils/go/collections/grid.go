@@ -16,6 +16,19 @@ var MOVES = map[string]Direction{
 
 type Grid [][]byte
 
+// Find character in the grid
+// f: character to find
+func (g Grid) Find(f byte) Point {
+	for m, row := range g {
+		for n, c := range row {
+			if c == f {
+				return Point{RowIdx: m, ColIdx: n}
+			}
+		}
+	}
+	panic("No starting point")
+}
+
 func (g Grid) Len() int {
 	return len(g)
 }

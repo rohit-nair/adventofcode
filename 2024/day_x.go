@@ -1,12 +1,12 @@
 package main
 
 import (
-	"advent/day_15"
+	day_15_2 "advent/day_15"
 	// "fmt"
 	"runtime"
 )
 
 func main() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	day_15.Run()
+	day_15_2.Run()
 }
